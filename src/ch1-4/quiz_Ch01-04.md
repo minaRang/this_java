@@ -21,8 +21,8 @@
 1. 
 2. 
 3. 
-4. 
-5. equals, contains, ==의 차이점을 서술해주세요
+4. 생성자 선언후 nullpointerexception 사용 시 참조형을 사용하면 안되는 이유를 서술해주세요.
+5. equals, contains, ==의 차이점을 서술해주세요.
 
 ***
 
