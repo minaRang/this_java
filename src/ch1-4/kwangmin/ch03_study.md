@@ -3,8 +3,8 @@
 - 연산자의 우선 순위
 - 대입 연산자, 부호, 비트, 논리를 제외한 연산자는 모두 왼쪽에서부터 연산을 시작한다.
 #### 부호 연산자
-- + : 피연산자의 부호를 유지한다.
-- - : 피연산자의 부호를 변경한다.
+- +피연산자 : 피연산자의 부호를 유지한다.
+- -피연산자 : 피연산자의 부호를 변경한다.
 ```
 int i = -100;
 int result1 = -i; // 100
@@ -41,4 +41,61 @@ v2을 byte로 표현시 111111111111111111111110101이다.
 double result = (int1*1.0) / int2;
 double result = (double) int1 / int2;
 double result = int1 / (double)int2;
+```
+#### 오버플로우
+- 산술 연산시 연산 후의 산출값이 산출 타입으로 표현할 수 없는 값이 나온 경우 오버플로우라고 한다.
+- 그렇기에 아래와 같이 메소드를 활용하여 오버플로우를 탐지하는 것이 좋다.
+```
+public class CheckOverflowExample {
+	public static void main(String[] args) {
+		try {
+			int result = safeAdd(2000000000, 2000000000);
+			System.out.println(result);
+		} catch(ArithmeticException e) { // 예외 처리 코드
+			System.out.println("오버플로우가 발생하여 정확하게 계산할 수 없음");
+		}
+	}
+	
+	public static int safeAdd(int left, int right) {
+		if(right > 0) {
+			if(left > (Integer.MAX_VALUE - right)) { // 예외 발생 코드
+				throw new ArithmeticException("오버플로우 발생");
+			}
+		} else { // right <= 0 일 경우
+			if(left < (Integer.MIN_VALUE - right)) {
+				throw new ArithmeticException("오버플로우 발생"); // 예외 발생 코드
+			}
+		}
+		return left + right;
+	}
+}
+```
+- 정확한 계산시에는 부동소수점을 사용하지 않는다.
+```
+public class AccuracyExample1 {
+	public static void main(String[] args) {
+		int apple = 1;
+		double pieceUnit = 0.1;
+		int number = 7;
+		
+		double result = apple - number * pieceUnit;
+		
+		System.out.println(result);
+	}
+}
+ 
+이 경우 출력값은 : 0.299999999999999이며 0.3이 아닌 근사치의 값을 산출한다. 그렇기 때문에 정수 연산으로 변경해서 아래와 같이 처리해야 한다.
+public class AccuracyExample2 {
+	public static void main(String[] args) {
+		int apple = 1;
+		
+		int totalPieces= apple * 10;
+		int number = 7;
+		int temp = totalPieces - number;
+		
+		double result = temp / 10.0;
+    
+		System.out.println(result);
+	}
+}
 ```
