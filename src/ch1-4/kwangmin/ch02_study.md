@@ -86,3 +86,8 @@ byte byteValue = 65;
 char charValue = byteValue; (x) // 컴파일 에러 발생
 char charValue = (char)byteValue; (o) // 강제 타입 변환
 ```
+- 강제 타입 변환
+  - 큰 크기의 타입을 작은 타압의 값에 저장하는 방식
+```
+d
+```
