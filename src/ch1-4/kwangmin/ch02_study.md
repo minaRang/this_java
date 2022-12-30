@@ -87,7 +87,17 @@ char charValue = byteValue; (x) // 컴파일 에러 발생
 char charValue = (char)byteValue; (o) // 강제 타입 변환
 ```
 - 강제 타입 변환
-  - 큰 크기의 타입을 작은 타압의 값에 저장하는 방식
+  - 큰 크기의 타입을 작은 타압의 값에 저장하는 방식이며 강제 타입 변환시 값의 손실이 발생하지 않는지 확인을 해봐야 한다.
 ```
-d
+double doubleValue = 3.14;
+intValue = (int)doubleValue; // 3출력
+
+int num1 = 123456780;
+int num2 = 123456780;
+
+float num3 = num2;
+num2 = (int) num3;
+
+int result = num1 - num; // -4출력
 ```
+  - 위와 같이 값의 손실이 발생하며 -4가 출력되는 이유에는 가수23비트로는 int의 값을 표현할 수 없기에 근사치로 변환되며 정밀도 손실이 발생하며 double로 변환시에는 값의 손실이 일어나지 않는다.
