@@ -22,3 +22,23 @@ z = x++;
 System.out.println("z= " + x);// 10출력
 System.out.println("x= " + x);// 11출력
 ```
+#### 논리 부정 연산자(!)
+- !피연산자 : 연산의 값이 true라면 false로 false라면 true로 값을 바꾼다.
+#### 비트 반전 연산자(~)
+- 정수 타입(byte, long, int, short)에만 사용가능하며 2진수로 표현시 비트 값 0을 1로 1을 0으로 반전시킨다. 산출 값은 int로 반환되기 된다.
+```
+int v1 = 10; // 10
+int v2 = ~v1; // -11
+int v3 = ~v1 + 1; // -10
+
+v1을 byte로 표현시 000000000000000000000001010이며
+v2을 byte로 표현시 111111111111111111111110101이다.
+```
+#### 산술 연산자
+- long을 제외한 정수 타입 연산은 int타입으로 산출되므로 byte byte3 = byte1 + byte2의 경우 컴파일 에러가 난다.
+- 5 / 2 를 한 경우 double로 선언시에 2.5가 나오지 않으며 2.0이 저장된다. 그렇기에 2.5의 값을 얻기 위해서는 아래와 같은 방법을 사용해야 한다.
+```
+double result = (int1*1.0) / int2;
+double result = (double) int1 / int2;
+double result = int1 / (double)int2;
+```
