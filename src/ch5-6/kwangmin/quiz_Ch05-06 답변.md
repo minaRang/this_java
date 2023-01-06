@@ -28,7 +28,7 @@
 ***
 ### ✔️ 지훈
 1. 객체는 메모리상 어디에 생성되는가, 또 어떻게 메모리를 해제하는가 
-- 
+- 객체의 경우 힙 영역에 선언된다.
 2. Call by value 와 Call by Reference 차이, 자바의 call by reference
 - 
 3. 자바에서 파라미터로 객체를 넘기는 것은 Call by Reference인가
