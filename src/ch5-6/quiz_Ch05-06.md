@@ -14,6 +14,10 @@
 
 ***
 ### ✔️ 지훈
+1. 객체는 메모리상 어디에 생성되는가, 또 어떻게 메모리를 해제하는가 
+2. Call by value 와 Call by Reference 차이, 자바의 call by reference
+3. 자바에서 파라미터로 객체를 넘기는 것은 Call by Reference인가
+4. 객체지향의 특징 중 캡슐화와 은닉성에 대해 설명하시오.
 
 ***
 ### ✔️ 지우
