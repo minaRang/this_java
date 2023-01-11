@@ -106,3 +106,20 @@ public CellPhone(){
   spuer(매가값);
 }
 ```
+- 부모 클래스에서 기본 생성자가 존재하지 않을시
+```
+public class People{
+	public String name;
+	public People(Stinrg name){
+		this.name = name;
+	}
+}
+
+public class Student extends People{
+	public int No;
+	public Student(String name, int No){
+		super(name); // 부모 생성자를 호출 한 것
+		this.No = No;
+	}
+}
+```
