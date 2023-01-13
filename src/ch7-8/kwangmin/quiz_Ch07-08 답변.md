@@ -55,7 +55,7 @@
 ### ✔️ 미나
 
 1. instanceof 연산자와 지양하는 이유?
--  
+-  강제 타입 변환의 경우 자식 타입이 부모 타입으로 변환된 상태에서만 가능하기 때문에 boolean result = 객체 instanceof 타입으로 객체가 타입으로 생성되었다면 true를 출력해주기에 ClassCastException 예외를 예방할 수 있다.
 2. 상속관계와 포함관계에 대해서 설명하기(is-a, has-a)
 - 
 3. super, super()의 특징에 대해 설명하기
