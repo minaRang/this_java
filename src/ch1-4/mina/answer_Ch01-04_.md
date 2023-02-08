@@ -138,33 +138,110 @@
 4. while 문과 do~while 문의 차이점에 대해 설명하세요
     - 조건을 만족하지 않았을 때, while문은 반복문을 한번도 실행하지 않지만 do-while문은 반복문을 적어도 한번 실행함. 
    
-5. 정수를 입력받으면 해당 정수가 짝수인지 홀수인지 판별하는 코드를 작성하세요
+   1. 정수를 입력받으면 해당 정수가 짝수인지 홀수인지 판별하는 코드를 작성하세요
+       ```java
+       public static void main(String[] args) {
+           Scanner sc = new Scanner(System.in);
+           int num = sc.nextInt();
+           boolean result = false;
+
+           if(method(num)) System.out.println("홀수입니다");
+           else System.out.println("짝수입니다");
+           }
+       
+       public static boolean method(int num){
+           if(num%2 == 1){
+           return true;
+           }
+         return false;
+       }
+      ```
 
 ***
 
 ### ✔️ 광민
 1. JVM의 동작 방식에 대해 서술해주세요.
+   - 앞에서 기술
 2. 강제 타입 변환과 자동 타입 변환을 설명해주세요.
+   - 앞에서 기술
 3. do~while과 switch문에 관하여 설명해주세요.
+   - do-while
+     - 앞에서 기술 
+   - switch
+     - if문은 조건식이 true, false밖에 없기 때문에 경우의 수가 많아질 수록 else if반복추가
+     - switch문은 변수의 값에 따라 실행문이 결정되기 때문에 같은 기능의 if문보다 코드 간결해짐
+     - switch문의 괄호에는 정수타입(byte, char, short, int, long), 문자열 타입(String)사용 가능
 4. 오버플로우와 언더플로우의 차이점에 대해 서술해주세요.
+   - 앞에서 기술
 5. equals, contains, ==의 차이점을 서술해주세요.
+
 
 ***
 
 ### ✔️ 지훈
 1. 자바 컴파일 과정에 대해 설명하시오.
+   - 앞에서 기술
 2. 자바는 모든 운영체제에서 실행 가능하다. 어떻게 이것이 가능한지 설명하시오. 그리고 컴파일 언어와 인터프리터 언어의 특징에 대해 설명하시오
+   - 운영체제에서 실행 가능한 이유는 앞에서 기술
+   - 컴파일 언어 VS 인터프리터 언어
+     1. 컴파일 언어
+        - 컴파일러는 고급 언어로 작성된 소스 코드를 저급 언어로 번역하는 프로그램.
+        - 컴파일러 언어는 컴파일러를 통해 컴파일 타임에 전체 소스 코드를 한 번에 기계어로 변환후 실행파일을 만듦.
+        - 컴파일 언어는 컴파일 단계와 실행 단계가 분리 되어 있음.
+        - C, C++, C#, Java
+     2. 인터프리터 언어
+        - 프로그래밍 언어의 소스 코드를 바로 실행하는 프로그램
+        - 컴파일 하지 않고, 소스 코드를 한 줄씩 읽어들여 실행.
+        - 컴파일 과정이 없기 때문에 컴파일 시간은 소요되지 않으나 실행 파일이 별도 생성되지 않기 때문에 실행시마다 인터프리트 과정이 반복 수행되어<br>
+        실행속도가 느림
+        - Python, Javascript,Ruby
 3. byte에서 char 형으로 형 변환 시, 자동 형 변환이 불가능한 이유에 대해 설명하시오
-4. int a = 32768;을 (short)a, (char)a으로 각각 강제 형변환할 경우, 발생하는 일에 대해 설명하시오 
+   - byte는 음수 포함, char는 음수 미포함 -> 형변환 불가 
+4. int a = 32768;을 (short)a, (char)a으로 각각 강제 형변환할 경우, 발생하는 일에 대해 설명하시오
+   1. short
+      - overflow 
+   2. char
+      - 정상적으로 변환됨 (최대 범위 넘지 않음.)
 5. if문과 switch ~ case문의 차이를 설명하시오.  
 ***
 
 ### ✔️ 지우
 1.강제 타입 변환과 자동 타입 변환에 대해 작성하기 
+    - 앞에서 기술
 2. 다음 연산으로 실행되는 데이터 타입 작성하기
 (1)-byte
+   - int
 (2)byte+byte
+   - int
 (3)int+long
+   - long
 3.정수를 입력받고, 7로 나누었을 때 나머지가 0이 아니면 "X"출력 후 반복, 0이면 "종료"출력 후 종료되는 반복문 코드 작성하기
+```java
+public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        
+        while(true){
+            if(num  % 7 == 0 ){
+                   System.out.print("종료");
+                   break;
+            }else System.out.println("X");
+        }
+}
+```
 4.2023년 1월 1일을 printf() 메서드를 이용하여 출력하는 코드 작성하기
+```java
+public static void main(String[]args){
+    
+        System.out.printf("%d년 %d월 %d일",2023,1,1);
+        
+}
+
+```
+
 5.++피연산자, 피연산자++ 설명하기
+   1. 전위 연산자
+      - ++가 연산되고 출력
+   2. 후위 연산자
+      - ++가 연산되기 전 출력하고 연산
+
